@@ -6,6 +6,12 @@ import { TbArrowRight } from "react-icons/tb";
 import Header from "@/components/header_landing";
 import Name from "@/public/preview.svg";
 import Image from "next/image";
+import localFont from 'next/font/local'
+
+const SanskritFont = localFont({
+    src: './fonts/SAMAN.ttf',
+    display: 'swap',
+});
 
 export default function Home() {
 
@@ -16,11 +22,12 @@ export default function Home() {
      <img src="/media/bg.webp" alt="Background Image" className="absolute inset-0 w-full h-full object-cover filter blur-sm" />
      <div className="absolute inset-0 bg-black bg-opacity-10 dark:bg-opacity-60"></div>
      <div className="absolute inset-0 flex flex-col items-center justify-center">
-    <Image src={Name} alt="Nirvatatva" />
-         <p className="text-xl max-md:text-xl m-2 text-white mt-4">Handcrafted treasures, bringing your vision to life with style.</p>
+    {/* <Image src={Name} alt="Nirvatatva" /> */}
+    <h1 className={`${SanskritFont.className} text-9xl`} >Nirvatatva</h1>
+    <p className="text-xl max-md:text-xl m-2 text-white mt-4">Handcrafted treasures, bringing your vision to life with style.</p>
      </div>
  </div>
- <section className="bg-white dark:bg-gray-900">
+ <section className="dark:bg-black">
     <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">We also sell customized Sofas</h1>
         <p className="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-100">Find your perfect sofa with custom options. Choose fabrics and designs that match your style, making your sofa uniquely yours for a cozy home.</p>
@@ -53,7 +60,7 @@ export default function Home() {
         </div> 
     </div>
 </section>
-<section className="bg-white dark:bg-gray-900">
+<section className="dark:bg-black">
     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
             <h1 className="max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white">Quality Furniture You Can Trust, Horizaura Now on Amazon!</h1>

@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
      crossorigin="anonymous" strategy="lazyOnload"
 ></Script>
      </Head>
-       <body className={cn("min-h-screen dark:bg-gray-900 bg-background font-sans antialiased ", poppins?.className || '')}>
+       <body className={cn("min-h-screen bg-gradient-to-b from-orange-200 to-cyan-200 dark:bg-black bg-background font-sans antialiased ", poppins?.className || '')}>
         <Providers>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange >
           <Header />

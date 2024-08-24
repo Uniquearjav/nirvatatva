@@ -24,13 +24,13 @@ export default function Header() {
         <NavbarBrand>
           <Image 
             src={Logo} 
-            className="max-md:h-1/2 max-md:w-1/3" 
+            className="max-md:h-1/2 p-10 max-md:w-1/3" 
             height={80} 
             width={80} 
             alt="nirvatatva Logo" 
             priority 
           />
-          <p className="p-5 sm:p-0 max-md:p-0 max-md:text-3xl text-4xl font-semibold text-inherit">nirvatatva</p>
+          <p className="p-10 sm:p-0 max-md:p-0 max-md:text-3xl text-4xl font-semibold text-inherit">Nirvatatva</p>
         </NavbarBrand>
       </NavbarContent>
 
