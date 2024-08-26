@@ -55,7 +55,7 @@ api.get("products", {
     <>
     <Header />
      <div className="relative h-screen w-full">
-     <Image src="/media/bg.webp" alt="Background Image" className="absolute inset-0 w-full h-full object-cover filter blur-sm" />
+     <Image src="/media/bg.webp" alt="Background Image" className="absolute inset-0 w-full h-full object- filter blur-sm" priority />
      <div className="absolute inset-0 bg-black bg-opacity-10 dark:bg-opacity-60"></div>
      <div className="absolute inset-0 flex flex-col items-center justify-center">
     <h1 className={`${SanskritFont.className} text-6xl lg:text-[12rem] sm:text-4xl md:text-9xl 2xl:text-[18rem] text-white`} >Nirvatatva</h1>
@@ -71,7 +71,7 @@ api.get("products", {
                 Shop Now !!
                 <TbArrowRight className="text-3xl" />
             </Link>
-            <Link href="https://ig.me/m/horizaura" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+            <Link href="https://ig.me/m/nirvatatva" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
             <IoCall className="m-2" />
                 Contact Us for Custom Sofa
             </Link>  
