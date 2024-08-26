@@ -4,10 +4,8 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/themeprovider";
 import Header from "@/components/header_landing"
 import {Providers} from "@/app/providers";
-import Head from "next/head";
 import Footer from "@/components/footer";
 import { Analytics } from '@vercel/analytics/react';
-import Script from "next/script";
 
 
 const poppins = Poppins({
@@ -26,7 +24,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <link rel="icon" href="/favicon.ico" sizes="any" />
-                <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9405103571986725" crossorigin="anonymous" strategy="lazyOnload"></Script>
        <body className={cn("min-h-screen bg-gradient-to-b from-orange-200 to-cyan-200 dark:bg-black bg-background font-sans antialiased ", poppins?.className || '')}>
         <Providers>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange >

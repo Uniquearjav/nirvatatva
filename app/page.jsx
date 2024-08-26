@@ -4,22 +4,58 @@ import { IoCall } from "react-icons/io5";
 import Carousel from "@/components/heroproduct";
 import { TbArrowRight } from "react-icons/tb";
 import Header from "@/components/header_landing";
-import Name from "@/public/preview.svg";
-import Image from "next/image";
 import localFont from 'next/font/local'
+import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
+import Image from "next/image";
 
 const SanskritFont = localFont({
     src: './fonts/SAMAN.ttf',
     display: 'swap',
 });
 
-export default function Home() {
-
+export default async function Home() {
+//     process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+//  const res = await fetch("https://nirvatatva.rf.gd/wp-json/wc/v3/products", {
+//     headers: {
+//         Authorization: `Basic ${Buffer.from(
+//             `${process.env.WC_KEY}:${process.env.WC_SECRET}`
+//         ).toString("base64")}`,
+//     },
+//     }
+//  );
+const api = new WooCommerceRestApi({
+    url: "http://nirvatatva.rf.gd",
+    consumerKey: `${process.env.WC_KEY}`,
+    consumerSecret: `${process.env.WC_SECRET}`,
+    version: "wc/v3"
+  });
+ console.log(api)
+ // List products
+api.get("products", {
+    per_page: 20, // 20 products per page
+  })
+    .then((response) => {
+      // Successful request
+      console.log("Response Status:", response.status);
+      console.log("Response Headers:", response.headers);
+      console.log("Response Data:", response.data);
+      console.log("Total of pages:", response.headers['x-wp-totalpages']);
+      console.log("Total of items:", response.headers['x-wp-total']);
+    })
+    .catch((error) => {
+      // Invalid request, for 4xx and 5xx statuses
+      console.log("Response Status:", error.response.status);
+      console.log("Response Headers:", error.response.headers);
+      console.log("Response Data:", error.response.data);
+    })
+    .finally(() => {
+      // Always executed.
+    });
   return (
     <>
     <Header />
      <div className="relative h-screen w-full">
-     <img src="/media/bg.webp" alt="Background Image" className="absolute inset-0 w-full h-full object-cover filter blur-sm" />
+     <Image src="/media/bg.webp" alt="Background Image" className="absolute inset-0 w-full h-full object-cover filter blur-sm" />
      <div className="absolute inset-0 bg-black bg-opacity-10 dark:bg-opacity-60"></div>
      <div className="absolute inset-0 flex flex-col items-center justify-center">
     <h1 className={`${SanskritFont.className} text-6xl lg:text-[12rem] sm:text-4xl md:text-9xl 2xl:text-[18rem] text-white`} >Nirvatatva</h1>
