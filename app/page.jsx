@@ -22,8 +22,7 @@ export default function Home() {
      <img src="/media/bg.webp" alt="Background Image" className="absolute inset-0 w-full h-full object-cover filter blur-sm" />
      <div className="absolute inset-0 bg-black bg-opacity-10 dark:bg-opacity-60"></div>
      <div className="absolute inset-0 flex flex-col items-center justify-center">
-    {/* <Image src={Name} alt="Nirvatatva" /> */}
-    <h1 className={`${SanskritFont.className} text-9xl`} >Nirvatatva</h1>
+    <h1 className={`${SanskritFont.className} text-6xl lg:text-[12rem] sm:text-4xl md:text-9xl 2xl:text-[18rem] text-white`} >Nirvatatva</h1>
     <p className="text-xl max-md:text-xl m-2 text-white mt-4">Handcrafted treasures, bringing your vision to life with style.</p>
      </div>
  </div>

@@ -16,20 +16,17 @@ const poppins = Poppins({
   weight: ["400", "700"],
 });
 export const metadata = {
-  title: "Nirvatatva : Furniture and Sofas Redefined",
-  description: "Horizaura: Enhancing homes with beautifully crafted elegance. Explore our stunning selection of sofas, home decor, and captivating resin plates. Experience the blend of artistic craftsmanship and comfort in every aspect. Welcome to a world where creativity meets refined style.",
-  keywords: "Horizaura, furnitures, Enhancing homes, Sofas, Home decor, Resin plates, Artistic craftsmanship, Refined style, Horizaura home decor, Crafted elegance for homes, Stunning selection of sofas, Captivating resin plates, Artistic craftsmanship in furniture, Blend of creativity and comfort, Refined style in home furnishings, Experience elegance with Horizaura, Explore creativity in home decor, Horizaura: Where craftsmanship meets comfort",
+  title: "Nirvatatva | Home",
+  description: "Nirvatatva: Enhancing homes with beautifully crafted elegance. Explore our stunning selection of sofas, home decor, and captivating resin plates. Experience the blend of artistic craftsmanship and comfort in every aspect. Welcome to a world where creativity meets refined style.",
+  keywords: "Nirvatatva, furnitures, Enhancing homes, Sofas, Home decor, Resin plates, Artistic craftsmanship, Refined style, Horizaura home decor, Crafted elegance for homes, Stunning selection of sofas, Captivating resin plates, Artistic craftsmanship in furniture, Blend of creativity and comfort, Refined style in home furnishings, Experience elegance with Horizaura, Explore creativity in home decor, Horizaura: Where craftsmanship meets comfort",
   verification: { google: `${process.env.VERIFICAION}`},
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head><link rel="icon" href="/favicon.ico" sizes="any" />
-                <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9405103571986725"
-     crossorigin="anonymous" strategy="lazyOnload"
-></Script>
-     </Head>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+                <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9405103571986725" crossorigin="anonymous" strategy="lazyOnload"></Script>
        <body className={cn("min-h-screen bg-gradient-to-b from-orange-200 to-cyan-200 dark:bg-black bg-background font-sans antialiased ", poppins?.className || '')}>
         <Providers>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange >

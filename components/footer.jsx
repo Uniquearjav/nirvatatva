@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="p-5 bg-blue-300 dark:bg-black">
+        <footer className="p-5 bg-background/30 border-t-white border-2 dark:bg-black">
             <div className="text-center">
     <Link href="/" className="flex items-center m-5 justify-center text-2xl font-semibold text-black dark:text-white">
         <Image src={Logo} height={60} width={60} className="h-full mr-3 max-sm:h-9" alt="Horizaura Logo" priority />
