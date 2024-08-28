@@ -7,7 +7,6 @@ import {Providers} from "@/app/providers";
 import Footer from "@/components/footer";
 import { Analytics } from '@vercel/analytics/react';
 
-
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
