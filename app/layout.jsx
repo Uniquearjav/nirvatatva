@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <link rel="icon" href="/favicon.ico" sizes="any" />
-       <body className={cn("min-h-screen bg-gradient-to-b from-orange-200 to-cyan-200 dark:bg-black bg-background font-sans antialiased ", poppins?.className || '')}>
+       <body className={cn("min-h-screen bg-gradient-to-r from-orange-200 to-cyan-200 dark:bg-black bg-background font-sans antialiased ", poppins?.className || '')}>
         <Providers>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange >
           <Header />
