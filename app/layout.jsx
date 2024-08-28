@@ -6,7 +6,7 @@ import Header from "@/components/header_landing"
 import {Providers} from "@/app/providers";
 import Footer from "@/components/footer";
 import { Analytics } from '@vercel/analytics/react';
-
+import { GoogleAnalytics } from '@next/third-parties/google';
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -32,6 +32,7 @@ export default function RootLayout({ children }) {
           <Analytics />
         </ThemeProvider>
         </Providers>
+        <GoogleAnalytics gaId="G-YDDP48G31V" />
         </body>
     </html>
   );

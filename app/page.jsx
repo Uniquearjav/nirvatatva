@@ -6,7 +6,7 @@ import Header from "@/components/header_landing";
 import localFont from 'next/font/local'
 import Image from "next/image";
 import HeroImage from '@/public/media/bg.webp';
-import { GoogleAnalytics} from '@next/third-parties/google'
+
 
 const SanskritFont = localFont({
     src: './fonts/SAMAN.ttf',
@@ -75,7 +75,6 @@ return (
             <img className="rounded-xl" src="https://m.media-amazon.com/images/I/51IMeXBr+KL.jpg" alt="mockup" />
         </div>                
     </div>
-    <GoogleAnalytics gaId="G-YDDP48G31V" />
 </section>
  </>
   );
