@@ -1,33 +1,22 @@
-"use client"; // Enable client-side rendering
 // app/store/page.js
-import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import React from 'react';
 
-const Store = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+// Async component to fetch data server-side
+const Store = async () => {
+  let products = [];
+  let error = null;
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch('/api/collection');
-        if (!response.ok) {
-          throw new Error('Failed to fetch data');
-        }
-        const data = await response.json();
-        setProducts(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
+  try {
+    const response = await fetch(`${process.env.WEBSITE}/api/collection`, {
+      cache: 'no-store', // Ensures the data is fetched fresh each time (no caching)
+    });
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    products = await response.json();
+  } catch (err) {
+    error = err.message;
   }
 
   if (error) {
@@ -42,17 +31,19 @@ const Store = () => {
           // Calculate discount percentage
           const originalPrice = product.price; // Assuming product.price is the original price
           const discountedPrice = product.disc_price; // Assuming product.disc_price is the discounted price
-          const discountPercentage = originalPrice && discountedPrice 
-            ? Math.round(((originalPrice - discountedPrice) / originalPrice) * 100) 
+          const discountPercentage = originalPrice && discountedPrice
+            ? Math.round(((originalPrice - discountedPrice) / originalPrice) * 100)
             : 0; // Handle division by zero
 
           return (
             <div key={product._id} className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
               <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-                <img
+                <Image
                   className="object-cover"
-                  src={product.image} // Make sure to use the correct image source
-                  alt="product image"
+                  src={`/media/NT${product.id}.png`} // Make sure to use the correct image source
+                  width={300}
+                  height={300}
+                  alt={`/media/NT${product.id}.png`}
                 />
                 <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
                   {discountPercentage}% OFF
@@ -68,7 +59,6 @@ const Store = () => {
                     <span className="text-sm text-slate-900 line-through">{originalPrice}</span>
                   </p>
                   <div className="flex items-center">
-                    {/* Rating stars */}
                     {[...Array(5)].map((_, index) => (
                       <svg
                         key={index}
