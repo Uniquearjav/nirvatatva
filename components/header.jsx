@@ -6,9 +6,13 @@ import Image from "next/image"
 import { ModeToggle } from "./toggle_button"
 import { usePathname } from "next/navigation"
 
-
-
 export default function Component() {
+  const links = {
+    'Home': '/',
+    'About': '/about',
+    'Store': '/store',
+    'Contact Us': '/contact_us'
+  }
   const pathname = usePathname()
   console.log(pathname)
   return (
@@ -27,18 +31,14 @@ export default function Component() {
           </Link>
         </div>
         <div className="hidden space-x-4 md:flex">
-          <Link href="/" className="text-xl font-medium hover:font-semibold" prefetch={false}>
-            Home
+          {Object.entries(links).map((name, i) => (
+          <Link key={name} href={name[1]} className={`text-xl font-medium hover:font-semibold ${pathname === links[name[1]] ? 'font-semibold text-blue-600' : ''}`} 
+          prefetch={false}>
+            {name[0]}
           </Link>
-          <Link href="/store" className="text-xl font-medium hover:font-semibold" prefetch={false}>
-            Store
-          </Link>
-          <Link href="#" className="text-xl font-medium hover:font-semibold" prefetch={false}>
-            About
-          </Link>
-          <Link href="/Contact_Us" className="text-xl font-medium hover:font-semibold" prefetch={false}>
-            Contact Us
-          </Link>
+          ))}
+          
+        
         </div>
         <div className="flex items-center space-x-2">
           <ModeToggle />
