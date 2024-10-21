@@ -1,18 +1,16 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/LndSGXUDVDm
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
 "use client"
 
 import Link from "next/link"
 import Logo  from '../public/nirvatatva.svg'
 import Image from "next/image"
 import { ModeToggle } from "./toggle_button"
+import { usePathname } from "next/navigation"
 
 
 
 export default function Component() {
+  const pathname = usePathname()
+  console.log(pathname)
   return (
     <div className="w-full py-3 bg-background/90 fixed px-4 backdrop-blur">
       <div className="container mx-auto flex items-center justify-between">
